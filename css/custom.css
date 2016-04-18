@@ -23,6 +23,7 @@ body {
 
 .js body {
 	overflow: hidden;
+    padding-top: 40px;
 }
 
 a {

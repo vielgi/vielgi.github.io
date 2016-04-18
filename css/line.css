@@ -1,0 +1,132 @@
+body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+#mainHead{
+    font-weight:lighter;
+    font-family: sans-serif;
+    color: #ff4d4d;
+    text-align: center;
+    border-bottom: 1px solid gray;
+    padding-bottom: 40px;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-bottom: 50px;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.gdpLine{
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+.budgetLine {
+    fill: none;
+    stroke: green;
+    stroke-width: 1.5px;
+}
+.cpiLine{
+    fill: none;
+    stroke: purple;
+    stroke-width: 1.5px;
+}
+.incomeLine{
+    fill: none;
+    stroke: orange;
+    stroke-width: 1.5px;
+}
+/*event lines*/
+.eventlineborder {
+    stroke-width:1;
+/*    stroke-dasharray: 5, 3, 9, 2;*/
+    stroke-dasharray: 5, 10;
+}
+
+.eventlineconnector {
+    stroke-width:1;
+}
+
+.eventtitle {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 15px;
+    letter-spacing: 2px; 
+    text-anchor: right;
+    /*text-anchor: middle;*/
+}
+#checkBoxContainer{
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    border: 1px solid #ff4d4d;
+    float: left;
+    padding: 10px;
+}
+#lineChart{
+    float: left;
+}
+.cbSelectors{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    margin-right: 20px;
+    padding-left: 10px;
+}
+input[type=checkbox]{
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+#slider-range{
+    width: 250px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#amount{
+    font-size: 14px;
+    width: 250px;
+    text-align: center;
+    color: #ff4d4d;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+
+/*For the map*/
+
+/*
+line{
+    stroke:gray;
+    stroke-width:2;
+}
+title{
+    font-size: 14;
+    color: black;
+    fill: black;
+}
+path {
+    stroke: gray;
+    stroke-width: 0.5px;
+    fill:white;
+}
+svg{
+    background-color: #80dfff;
+    text-align: center;
+}
+#mainHead{
+    font-weight:lighter;
+    font-family: sans-serif;
+    color: coral;
+    border-bottom: 1px solid coral;
+    padding-bottom: 40px;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+*/
