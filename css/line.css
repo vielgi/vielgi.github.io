@@ -2,14 +2,11 @@ body {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 #mainHead{
-    font-weight:lighter;
-    font-family: sans-serif;
-    color: #ff4d4d;
+    font-weight:100;
+	letter-spacing: 2px;
     text-align: center;
-    border-bottom: 1px solid gray;
+    font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     padding-bottom: 40px;
-    margin-left: 300px;
-    margin-right: 300px;
     margin-bottom: 50px;
 }
 .axis path,
@@ -84,49 +81,14 @@ input[type=checkbox]{
 }
 
 #slider-range{
-    width: 250px;
     margin-bottom: 20px;
     margin-left: 10px;
     margin-right: 10px;
 }
 #amount{
     font-size: 14px;
-    width: 250px;
     text-align: center;
     color: #ff4d4d;
     margin-bottom: 20px;
     margin-top: 40px;
 }
-
-
-/*For the map*/
-
-/*
-line{
-    stroke:gray;
-    stroke-width:2;
-}
-title{
-    font-size: 14;
-    color: black;
-    fill: black;
-}
-path {
-    stroke: gray;
-    stroke-width: 0.5px;
-    fill:white;
-}
-svg{
-    background-color: #80dfff;
-    text-align: center;
-}
-#mainHead{
-    font-weight:lighter;
-    font-family: sans-serif;
-    color: coral;
-    border-bottom: 1px solid coral;
-    padding-bottom: 40px;
-    margin-left: 300px;
-    margin-right: 300px;
-}
-*/

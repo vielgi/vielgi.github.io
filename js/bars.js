@@ -6,7 +6,7 @@ function barChart(dataset) {
     //Set width and height as fixed variables
     var w = 800;
     var h = 800;
-    var padding = 5;
+    var padding = 35;
 
     //Scale function for axes and radius
     var yScale = d3.scale.linear()
@@ -173,7 +173,7 @@ function barChart(dataset) {
             var out = function (a, b) { return b.income_change - a.income_change; }
             return out;
         }
-        //from here   
+           
         else if (sort[0][0].checked && state[0][2].selected) {
             var out = function (a, b) { return b.cpi_change - a.cpi_change; }
             return out;

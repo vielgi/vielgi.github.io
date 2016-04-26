@@ -1,0 +1,92 @@
+/*For the map*/
+body{
+    font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+#usaText{
+    text-align: center;
+    margin-bottom: 20px;
+    /*border-bottom:1px solid;
+    border-left:1px solid;*/
+    /*margin: 5px 400px 30px 400px;*/
+}
+.topText{
+    font-weight: bold;
+}
+#mainHeadMap{
+    font-weight:100;
+	letter-spacing: 2px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.polImg{
+    display: inline;
+    font-weight: bold;
+}
+line{
+    stroke:gray;
+    stroke-width:2;
+}
+/*title{
+    font-size: 14;
+    color: black;
+    fill: black;
+}*/
+path {
+    /*stroke: white;*/
+    stroke: black;
+    stroke-width: 0.5px;
+    /*fill:#b3b3b3;*/
+    /*fill:#c1d82f;*/
+    /*fill:#ffcb00;*/
+    fill:#7f8c8d;
+}
+#mapsvg{
+    /*background-color: #80dfff;*/
+    /*background-color: #6caedf;*/
+    background-color: #80dfff;
+    text-align: center;
+}
+#chart-area{
+    float:left;
+}
+#indicators{
+    float: left;
+}
+.indicator{
+    width: 200px;
+    font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    /*background-color: #394648;*/
+    background-color: #394648;
+    color: white;
+    text-align: right;
+    padding-right: 5px;
+    /*display: inline-block;*/
+    margin: 10px 80px 20px 30px;
+}
+.indicatorText{
+    font-size: 20px;
+    font-weight: bold;
+}
+.in-fo{
+    /*background-color: #9D5C63; */
+    background-color: #111d4a;
+}
+.circleCountryText{
+    font-weight: bold;
+    fill: white;
+    font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+#amount{
+    border:0;
+    font-weight:bold;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+#slider{
+    width: 200px;
+    /*margin-left: 30px;
+    margin-right: 50px;*/
+    margin-left: 30px;
+    margin-bottom: 20px;
+}

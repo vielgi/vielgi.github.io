@@ -244,7 +244,7 @@ function updateVisualization() {
     
     newEventData = eventData.filter(function(d) { return (d.startdate >= format.parse(lb) && d.enddate <= format.parse(ub)) });
     
-    console.log(newEventData)
+    //console.log(newEventData)
     
     var eventInd = svg.selectAll(".eventInd")
     .data(newEventData)

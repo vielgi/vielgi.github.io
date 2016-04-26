@@ -1,0 +1,78 @@
+﻿<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <title>Map - Final Project</title>
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+        <link rel="stylesheet" href="css/jquery-ui.min.css">
+        <link rel="stylesheet" href="css/mapStyle.css">
+    </head>
+    <body id="mapBody">
+        <div class="container">
+            <h1 id="mainHeadMap">World GDP per Capita</h1>
+
+            <div class="row">
+                <div class="col-md-12" id="usaText">
+                    <div class="col-md-4 polImg"><img id="presImg" src="images/demPres.png" alt="president" /><br /><span id="pImgTxt"></span></div>
+                    <div class="col-md-4 polImg"><img id="senImg" src="images/demSen.png" alt="president" /><br /><span id="sImgTxt">Senate</span></div>
+                    <div class="col-md-4 polImg"><img id="houseImg" src="images/demHouse.png" alt="president" /><br /><span id="hImgTxt">House of Representatives</span></div>
+                    <!--<div>USA President: <span class="topText" id="currentPresident"></span></div>
+                <div>President Party: <span class="topText" id="currentPresParty"></span></div>
+                <div>Senate Party: <span class="topText" id="currentSenParty"></span></div>
+                <div>House of Rep. Party: <span class="topText" id="currentHouseParty"></span></div>-->
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-9" id="chart-area"></div>
+
+                <div class="col-md-3" id="indicators">
+                    <!--<label for="amount">Year (2-yr increments):</label>-->
+                    <input type="text" id="amount" readonly>
+                    <div id="slider"></div>
+
+
+                    <div class="indicator"><div class="indicatorText" id="usa"></div>Country</div>
+                    <div class="indicator"><div class="indicatorText" id="gdp"></div>GDP per Capita</div>
+                    <div class="indicator"><div class="indicatorText" id="gdpChange"></div><div id="changeText"></div></div>
+                    <div class="indicator in-fo"><div class="indicatorText" id="country">Click a Circle</div>Country</div>
+                    <div class="indicator in-fo"><div class="indicatorText" id="gdpCountry">$0</div>GDP per Capita</div>
+                    <div class="indicator in-fo"><div class="indicatorText" id="gdpChangeCountry">0%</div><div id="countryText">from 1949</div></div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <p><a href="mapProjection.html"><i class="fa fa-chevron-left" aria-hidden="true"></i> Previous</a></p>
+                    </div>
+                    <div class="col-md-6" style="text-align:right;">
+                        <p><a href="methodology.html">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/d3.min.js"></script>
+        <script src="js/topojson.v1.min.js"></script>
+        <script src="js/queue.v1.min.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/gdpMap.js"></script>
+    </body>
+</html>

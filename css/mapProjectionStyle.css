@@ -1,0 +1,65 @@
+#mainMapProjHead{
+    font-weight:100;
+	letter-spacing: 2px;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+svg {
+  font: 13px sans-serif;
+}
+
+.background path {
+  fill: none;
+  stroke: none;
+  stroke-width: 20px;
+  pointer-events: stroke;
+}
+
+.foreground path {
+  fill: none;
+  /*stroke: steelblue;*/
+    /*stroke:#ff4d4d;*/
+    opacity: .5;
+  stroke-width: 1.5px;
+}
+
+.foregroundDem{
+  stroke: steelblue;
+}
+
+.foregroundRep{
+  stroke: #ff4d4d;
+}
+
+.axis .title {
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.axis line,
+.axis path {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.label {
+  -webkit-transition: fill 125ms linear;
+}
+
+.active .label:not(.inactive) {
+  font-weight: bold;
+}
+
+.label.inactive {
+  fill: #ccc;
+}
+
+.foreground path.inactive {
+  stroke: #ccc;
+  stroke-opacity: .5;
+  stroke-width: 1px;
+}

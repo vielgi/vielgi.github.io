@@ -209,8 +209,6 @@ function updateVisualization() {
     if ($("#cpiCB").is(":checked")){
         svg.select(".cpiLine")
             .datum(newData)
-            .transition()
-            .duration(800)
             .attr("d", cpiLine)
             .style("visibility","visible");
     }else{
@@ -248,86 +246,51 @@ function updateVisualization() {
     
     var eventInd = svg.selectAll(".eventInd")
     .data(newEventData)
-    var eventText = svg.selectAll(".eventtitle")
-    .data(newEventData)
-    var eventEnd = svg.selectAll(".eventEnd")
-    .data(newEventData)
-    var eventCon = svg.selectAll("eventlineconnector")
-    .data(newEventData)
-    //.enter()
-    //.append("g")
-    //.attr("class", "eventInd");
+    .enter()
+    .append("g")
+    .attr("class", "eventInd");
     
     // draw a line: start event
-    eventInd.enter().append("line")
-        .attr("class", "eventInd eventlineborder")
-        //.attr("x1", function(d) { return x(d.startdate); })
-        .attr("y1", 0)
-        //.attr("x2", function(d) { return x(d.startdate); })
-        .attr("y2", eventHeight)
-        //.attr("class","eventlineborder")
-        //.style("stroke",function(d){
-          //  if (d.party ==="D"){return "#66d9ff"}
-            //else{return "#ff6666"}
-        //});
-    eventInd
+    eventInd.append("line")
         .attr("x1", function(d) { return x(d.startdate); })
-        //.attr("y1", 0)
+        .attr("y1", 0)
         .attr("x2", function(d) { return x(d.startdate); })
-        //.attr("y2", eventHeight)
+        .attr("y2", eventHeight)
+        .attr("class","eventlineborder")
         .style("stroke",function(d){
             if (d.party ==="D"){return "#66d9ff"}
             else{return "#ff6666"}
         });
     
   // draw a line: end event
-    eventEnd.enter().append("line")
-        .attr("class", "eventEnd eventlineborder")
-        //.attr("x1", function(d) { return x(d.enddate); })
-        .attr("y1", 0)
-        //.attr("x2", function(d) { return x(d.enddate); })
-        .attr("y2", eventHeight)
-        //.attr("class","eventlineborder")
-        //.style("stroke",function(d){
-          //  if (d.party ==="D"){return "#66d9ff"}
-            //else{return "#ff6666"}
-        //});
-    
-    eventEnd
+    eventInd.append("line")
         .attr("x1", function(d) { return x(d.enddate); })
+        .attr("y1", 0)
         .attr("x2", function(d) { return x(d.enddate); })
-        .style("stroke",function(d){
-            if (d.party ==="D"){return "#66d9ff"}
-            else{return "#ff6666"}
-        });
-    // draw a line: period connector event
-   eventCon.enter().append("line")
-        .attr("class", "eventlineconnector")
-        //.attr("x1", function(d) { return x(d.startdate); })
-        .attr("y1", eventHeight)
-       // .attr("x2", function(d) { return x(d.enddate); })
         .attr("y2", eventHeight)
-        //.attr("class","eventlineconnector")
-        //.style("stroke",function(d){
-          //  if (d.party ==="D"){return "#66d9ff"}
-            //else{return "#ff6666"}
-        //});
-    eventCon
-        .attr("x1", function(d) { return x(d.startdate); })
-        .attr("x2", function(d) { return x(d.enddate); })
+        .attr("class","eventlineborder")
         .style("stroke",function(d){
             if (d.party ==="D"){return "#66d9ff"}
             else{return "#ff6666"}
         });
+    
+    // draw a line: period connector event
+    eventInd.append("line")
+        .attr("x1", function(d) { return x(d.startdate); })
+        .attr("y1", eventHeight)
+        .attr("x2", function(d) { return x(d.enddate); })
+        .attr("y2", eventHeight)
+        .attr("class","eventlineconnector")
+        .style("stroke",function(d){
+            if (d.party ==="D"){return "#66d9ff"}
+            else{return "#ff6666"}
+        });
+    
     // add event label
-    //eventInd.append("text")
-    eventText.enter().append("text")
-        .attr("class", "eventtitle")
-        .attr("x",eventHeight + 5)
-        .attr("transform", "rotate(90)")
+    eventInd.append("text")
         //.attr("x", function(d) { return x(d.startdate) + ((x(d.enddate) - x(d.startdate))/2); })
         //.attr("y", eventHeight + 12)
-       /* .attr("x",eventHeight + 5)
+        .attr("x",eventHeight + 5)
         .attr("y",function(d) { return -1* (x(d.startdate) + ((x(d.enddate) - x(d.startdate))/2)); })
         .attr("class", "eventtitle")
         .text(function(d) { return d.name; })
@@ -335,17 +298,7 @@ function updateVisualization() {
         .style("stroke",function(d){
             if (d.party ==="D"){return "#66d9ff"}
             else{return "#ff6666"}
-        });*/
-    eventText
-        .attr("y",function(d) { return -1* (x(d.startdate) + ((x(d.enddate) - x(d.startdate))/2)); })
-        .text(function(d) { return d.name; })
-        .style("stroke",function(d){
-            if (d.party ==="D"){return "#66d9ff"}
-            else{return "#ff6666"}
         });
     
-    eventInd.exit().remove();
-    eventEnd.exit().remove();
-    eventCon.exit().remove();
-    eventText.exit().remove();
+    //eventInd.exit().remove();
 }
