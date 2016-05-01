@@ -9,6 +9,7 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
@@ -20,13 +21,14 @@
     <![endif]-->
     <!-- Custom CSS code -->
     <link rel="stylesheet" type="text/css" href="css/bars.css" />
+    <link href="css/enjoyhint/enjoyhint.css" rel="stylesheet" />
 </head>
 <body>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <h3>
-                    Who was the best President for <select>
+                    Who was the best President for <select id="criteria">
                         <option id="item" value="income">Median Income Change</option>
                         <option id="item" value="gdp">GDP Change</option>
                         <option id="item" value="cpi">Consumer Price Index Change</option>
@@ -41,7 +43,7 @@
                 <!-- Parent container for the bars visualization -->
 
                 <ul>
-                    <li><input type="checkbox" class="checkbox" name="check" value="sort"> </li>
+                    <li><input type="checkbox" id="checky" class="checkbox" name="check" value="sort"> </li>
                     <li>Sort</li>
                 </ul>
             </div>
@@ -55,10 +57,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="col-md-6">
-                    <p><a href="line.html"><i class="fa fa-chevron-left" aria-hidden="true"></i> Previous</a></p>
+                    <p style="font-size:22px !important;"><a href="line.html"><i class="fa fa-chevron-left" aria-hidden="true"></i> Previous</a></p>
                 </div>
                 <div class="col-md-6" style="text-align:right;">
-                    <p><a href="matrix.html">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
+                    <p style="font-size:22px !important;"><a href="map.html">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
                 </div>
             </div>
         </div>
@@ -68,10 +70,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-
     <script src="js/d3.min.js"></script>
     
-    <!-- JS -->
+    <!-- Custom JS -->
     <script src="js/bars.js"></script>
+
+    <!--Enjoyhint JS-->
+    <script src="css/enjoyhint/enjoyhint.js"></script>
+    <script src="css/enjoyhint/tour_bars.js"></script>
 </body>
 </html>

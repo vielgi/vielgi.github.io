@@ -36,7 +36,7 @@ d3.csv("data/bars.csv", function(error, data) {
       //traits = ["cpi_change","budget_change"],
       //traits = d3.keys(data[0]).filter(function(d) {return d !== "species"; }),
       n = traits.length;
-    console.log(traits)
+      //console.log(traits)
 
   traits.forEach(function(trait) {
     domainByTrait[trait] = d3.extent(data, function(d) { return d[trait]; });

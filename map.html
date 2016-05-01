@@ -8,16 +8,17 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-
+        <link href="css/main.css" rel="stylesheet" />
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-
+        <link href="css/enjoyhint/enjoyhint.css" rel="stylesheet" />
         <link rel="stylesheet" href="css/jquery-ui.min.css">
+        <!-- Custom CSS code -->
         <link rel="stylesheet" href="css/mapStyle.css">
     </head>
     <body id="mapBody">
@@ -42,14 +43,14 @@
 
                 <div class="col-md-3" id="indicators">
                     <!--<label for="amount">Year (2-yr increments):</label>-->
-                    <input type="text" id="amount" readonly>
-                    <div id="slider"></div>
+                    <input type="text" id="amount" style='width:80%;margin-left:30px;' readonly>
+                    <div id="slider" style='width:80%;'></div>
 
 
                     <div class="indicator"><div class="indicatorText" id="usa"></div>Country</div>
                     <div class="indicator"><div class="indicatorText" id="gdp"></div>GDP per Capita</div>
                     <div class="indicator"><div class="indicatorText" id="gdpChange"></div><div id="changeText"></div></div>
-                    <div class="indicator in-fo"><div class="indicatorText" id="country">Click a Circle</div>Country</div>
+                    <div class="indicator in-fo" id="mostimportant"><div class="indicatorText" id="country">Click a Circle</div>Country</div>
                     <div class="indicator in-fo"><div class="indicatorText" id="gdpCountry">$0</div>GDP per Capita</div>
                     <div class="indicator in-fo"><div class="indicatorText" id="gdpChangeCountry">0%</div><div id="countryText">from 1949</div></div>
                 </div>
@@ -62,7 +63,7 @@
                         <p><a href="mapProjection.html"><i class="fa fa-chevron-left" aria-hidden="true"></i> Previous</a></p>
                     </div>
                     <div class="col-md-6" style="text-align:right;">
-                        <p><a href="methodology.html">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
+                        <p><a href="mapProjection.html">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
                     </div>
                 </div>
             </div>
@@ -73,6 +74,12 @@
         <script src="js/queue.v1.min.js"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery-ui.min.js"></script>
+
+        <!-- Custom JS -->
         <script src="js/gdpMap.js"></script>
+
+        <!--Enjoyhint JS-->
+        <script src="css/enjoyhint/enjoyhint.js"></script>
+        <script src="css/enjoyhint/tour_map.js"></script>
     </body>
 </html>
