@@ -40,6 +40,21 @@ body {
     stroke: orange;
     stroke-width: 1.5px;
 }
+.sandpLine{
+    fill: none;
+    stroke:#9ACD32;
+    stroke-width: 1.5px;
+}
+.debtLine{
+    fill: none;
+    stroke: #00F5FF;
+    stroke-width: 1.5px;
+}
+.unempLine{
+    fill: none;
+    stroke: #FFA07A;
+    stroke-width: 1.5px;
+}
 /*event lines*/
 .eventlineborder {
     stroke-width:1;
@@ -81,14 +96,12 @@ input[type=checkbox]{
 }
 
 #slider-range{
-    width: 250px;
     margin-bottom: 20px;
     margin-left: 10px;
     margin-right: 10px;
 }
 #amount{
     font-size: 14px;
-    width: 250px;
     text-align: center;
     color: #ff4d4d;
     margin-bottom: 20px;

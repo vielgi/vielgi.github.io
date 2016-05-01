@@ -76,11 +76,16 @@ d3.csv("data/bars.csv", function(error, data) {
     });
 
   dimensions.forEach(function(dimension) {
+      if (dimension.name != "president"){
     dimension.scale.domain(dimension.type === Number
         ? d3.extent(data, function(d) { return +d[dimension.name]; })
         : data.map(function(d) { return d[dimension.name]; }).sort());
-      
-      console.log(dimension.name)
+      }else {
+          dimension.scale.domain(dimension.type === Number
+        ? d3.extent(data, function(d) { return +d[dimension.name]; })
+        : data.map(function(d) { return d[dimension.name]; }));
+      }
+      //console.log(dimension.name)
   });
 
   svg.append("g")

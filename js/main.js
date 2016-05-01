@@ -88,6 +88,21 @@ var incomeLine = d3.svg.line()
    // .x(function(d) { return x(d.term); })
     .y(function(d) { return y(d.income_change); });
 
+var sandpLine = d3.svg.line()
+    .interpolate("basis")
+   // .x(function(d) { return x(d.term); })
+    .y(function(d) { return y(d.sp_change); });
+
+var unempLine = d3.svg.line()
+    .interpolate("basis")
+   // .x(function(d) { return x(d.term); })
+    .y(function(d) { return y(d.unemployment_change); });
+
+var debtLine = d3.svg.line()
+    .interpolate("basis")
+   // .x(function(d) { return x(d.term); })
+    .y(function(d) { return y(d.debt_change); });
+
 //svg area
 var svg = d3.select("#lineChart").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -97,7 +112,7 @@ var svg = d3.select("#lineChart").append("svg")
 
 //line paths
 var gdpLinePath = svg.append("path")
-.attr("class", "gdpLine");
+.attr("class", "gdpLine")
 
 var cpiLinePath = svg.append("path")
 .attr("class", "cpiLine");
@@ -108,6 +123,14 @@ var incomeLinePath = svg.append("path")
 var budgetLinePath = svg.append("path")
 .attr("class", "budgetLine");
 
+var sandpLinePath = svg.append("path")
+.attr("class", "sandpLine");
+
+var debtLinePath = svg.append("path")
+.attr("class", "debtLine");
+
+var unempLinePath = svg.append("path")
+.attr("class", "unempLine");
 
 //loading president data
 //president terms line chart
@@ -145,6 +168,9 @@ d3.csv("data/bars.csv", function(error, data) {
         d.budget_change = +d.budget_change;
         d.cpi_change = +d.cpi_change * 100;
         d.income_change = +d.income_change * 100;
+        d.sp_change = +d.sp_change * 100;
+        d.debt_change = +d.debt_change * 100;
+        d.unemployment_change = +d.unemployment_change * 100;
     });
     //console.log(data);
     
@@ -156,7 +182,7 @@ d3.csv("data/bars.csv", function(error, data) {
     
     //y scale domain
     //y.domain(d3.extent(data, function(d) { return d.gdp; }));
-    y.domain([-20,20])
+    //y.domain([-40,40])
     
     // group for x axis
     var xAxisGroup = svg.append("g")
@@ -165,9 +191,9 @@ d3.csv("data/bars.csv", function(error, data) {
       //.call(xAxis);
     
     //group for y axis
-    svg.append("g")
-      .attr("class", "y axis")
-      .call(yAxis)
+    var yAxisGroup = svg.append("g")
+      .attr("class", "y axis y-axis")
+      /*.call(yAxis)*/
     .append("text")
       .attr("transform", "rotate(-90)")
       .attr("y", 6)
@@ -184,6 +210,14 @@ function updateVisualization() {
     //date periods
     var newData = globalData.filter(function(d) { return (d.term >= format.parse(lb) && d.term <= format.parse(ub)) });
     
+    //setting the domain for the y scale
+    //y.domain([-40,40])
+    if ($("#unempCB").is(":checked") || $("#debtCB").is(":checked") || $("#spCB").is(":checked")){
+        y.domain([-40,40])
+    }else{
+        y.domain([-10,20])
+    }
+    
     //setting the domain for the x scale
     x.domain(d3.extent(newData, function(d) { return d.term; }));
     
@@ -192,7 +226,17 @@ function updateVisualization() {
     cpiLine.x(function(d) { return x(d.term); })
     budgetLine.x(function(d) { return x(d.term); })
     incomeLine.x(function(d) { return x(d.term); })
+    sandpLine.x(function(d) { return x(d.term); })
+    debtLine.x(function(d) { return x(d.term); })
+    unempLine.x(function(d) { return x(d.term); })
     
+    /*gdpLine.y(function(d) { return y(d.gdp_change); })
+    cpiLine.y(function(d) { return y(d.cpi_change); })
+    budgetLine.y(function(d) { return y(d.budget_change); })
+    incomeLine.y(function(d) { return y(d.income_change); })
+    sandpLine.y(function(d) { return y(d.sp_change); })
+    debtLine.y(function(d) { return y(d.debt_change); })
+    unempLine.y(function(d) { return y(d.unemployment_change); })*/
     
     //updating individual lines
     if ($("#gdpCB").is(":checked")){
@@ -220,6 +264,8 @@ function updateVisualization() {
     if ($("#incomeCB").is(":checked")){
         svg.select(".incomeLine")
             .datum(newData)
+            .transition()
+            .duration(800)
             .style("visibility","visible")
             .attr("d", incomeLine);
     }else{
@@ -229,10 +275,40 @@ function updateVisualization() {
     if ($("#budgetCB").is(":checked")){
         svg.select(".budgetLine")
             .datum(newData)
+            .transition()
+            .duration(800)
             .style("visibility","visible")
             .attr("d", budgetLine);
     }else{
         svg.select(".budgetLine").style("visibility","hidden");
+    }
+    if ($("#spCB").is(":checked")){
+        svg.select(".sandpLine")
+            .datum(newData)
+            .style("visibility","visible")
+            .attr("d", sandpLine);
+    }else{
+        svg.select(".sandpLine").style("visibility","hidden");
+    }
+    if ($("#debtCB").is(":checked")){
+        svg.select(".debtLine")
+            .datum(newData)
+            .transition()
+            .duration(800)
+            .style("visibility","visible")
+            .attr("d", debtLine);
+    }else{
+        svg.select(".debtLine").style("visibility","hidden");
+    }
+    if ($("#unempCB").is(":checked")){
+        svg.select(".unempLine")
+            .datum(newData)
+            .transition()
+            .duration(800)
+            .style("visibility","visible")
+            .attr("d", unempLine);
+    }else{
+        svg.select(".unempLine").style("visibility","hidden");
     }
     
     //updating the x axis
@@ -241,10 +317,21 @@ function updateVisualization() {
         .duration(800)
         .call(xAxis);
     
+    //updating y axis
+    svg.select(".y-axis")
+        .transition()
+        .duration(800)
+        .call(yAxis);
+    /*.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Percentage (%)");*/
     
     newEventData = eventData.filter(function(d) { return (d.startdate >= format.parse(lb) && d.enddate <= format.parse(ub)) });
     
-    console.log(newEventData)
+    //console.log(newEventData)
     
     var eventInd = svg.selectAll(".eventInd")
     .data(newEventData)
