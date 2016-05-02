@@ -11,7 +11,7 @@ var tour = function () {
             {
                 selector: '#next',//jquery selector
                 event_type: 'next',
-                timeout: 10000,
+                timeout: 25000,
                 description: 'Please continue to the data visualizations.<br><br>'
             }
             ];

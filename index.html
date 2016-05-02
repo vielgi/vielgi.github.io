@@ -23,6 +23,7 @@
     <link href="css/menu.css" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet" />
     <link href="css/enjoyhint/enjoyhint.css" rel="stylesheet" />
+    
 </head>
 <body>
     <div class="container">
@@ -68,7 +69,7 @@
                     <a href="mapProjection.html">
                         <i class="fa fa-line-chart fa-2x"></i>
                         <span class="nav-text">
-                            Another Visualization
+                           Map Projection
                         </span>
                     </a>
                 </li>
@@ -112,18 +113,18 @@
             </ul>
         </nav>
         <div class="row">
-            <div class="col-md-12">
-                <h1 style="background-color:#085080;color:white;">"Grow the Economy"</h1>
-                <h1>"Create Jobs"</h1>
-                <h1>"Balance the Budget"</h1>
-                <h2>
-                    Ironically, the both of the two major US Parties make these claims! But what is their <strong>Track Record</strong>? Alternatively and simply, what Administrations
+            <div  class="col-md-12">
+                <h1 id="1" style="background-color:#085080;color:white;display:none;"><span>"Grow the Economy"</span></h1>
+                <h1 id="2" style="background-color:#085080;color:white;display:none;"><span>"Create Jobs"</span></h1>
+                <h1 id="3" style="background-color:#085080;color:white;display:none;"><span>"Balance the Budget"</span></h1>
+                <h2 id="4" style="display:none;">
+                    Ironically, both of the two major US Parties make these claims! But what is their <strong>Track Record</strong>? Alternatively and simply, what Administrations
                     have done better in these categories
                 </h2>
-                <p>Amidst another heated election season, we think it is imperative for voters to be critical of their politicians and especially of party dogma. 
+                <p id="5" style="display:none;">Amidst another heated election season, we think it is imperative for voters to be critical of their politicians and especially of party dogma. 
                 You know, the one that says that Republicans stand for balancing the budget and cutting the deficit, 
                 and Democrats for creating jobs (yes, yes, Republicans too), and Income inequality and growth… Well, what have they done in the <strong>past</strong>??</p>
-                <p>We aim to separate facts from fiction when it comes to actual Presidential records (starting from Truman to Obama) by looking directly at the <strong>data</strong>. We choose 
+                <p id="6" style="display:none;">We aim to separate facts from fiction when it comes to actual Presidential records (starting from Truman to Obama) by looking directly at the <strong>data</strong>. We choose 
                 to visualize and compare <strong>change</strong> between the start and end of each political two-year cycle for some of the most common <strong>economic indicators</strong>. (Feel free to jump to our methodology for the data.) 
                 Our hope is that this will inform the political discourse and spark voters’ curiosity.</p>
             </div>
@@ -148,5 +149,20 @@
 
     <script src="css/enjoyhint/enjoyhint.min.js"></script>
     <script src="css/enjoyhint/tour_intro.js"></script>
+    <script>
+        $(document).ready(function () {
+            setTimeout(function(){
+                $("#1").fadeIn(500);
+                $("#2").delay(1500).fadeIn(500);
+                $("#3").delay(3500).fadeIn(500);
+                $("#4").delay(5000).fadeIn(500);
+                $("#5").delay(10000).fadeIn(500);
+                $("#6").delay(15000).fadeIn(500);
+                }, 1000);
+        });
+    </script>
+
+    
+    
 </body>
 </html>
