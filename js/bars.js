@@ -4,7 +4,7 @@ var dataset;
 function barChart(dataset) {
 
     //Set width and height as fixed variables
-    var w = 800;
+    var w = 1000;
     var h = 800;
     var padding = 35;
 
