@@ -4,7 +4,7 @@ var dataset;
 function barChart(dataset) {
 
     //Set width and height as fixed variables
-    var w = 1000;
+    var w = 800;
     var h = 800;
     var padding = 35;
 
@@ -103,27 +103,27 @@ function barChart(dataset) {
             }
             else if (state[0][3].selected) {
                 info.append("p")
-                        .text(formatPercent(d.cpi_change) + " S&P500 Change in %" + " " + d.president);
+                        .text(formatPercent(d.sp_change) + " S&P500 Change in %" + " " + d.president);
             }
             else if (state[0][4].selected) {
                 info.append("p")
-                        .text(formatPercent(d.cpi_change) + " Budget As % of GDP" + " " + d.president);
+                        .text(formatPercent(d.budget_as_percentage) + " Budget As % of GDP" + " " + d.president);
             }
             else if (state[0][5].selected) {
                 info.append("p")
-                        .text(formatPercent(d.cpi_change) + " Budget As % Change" + " " + d.president);
+                        .text(formatPercent(d.budget_change) + " Budget As % Change" + " " + d.president);
             }
             else if (state[0][6].selected) {
                 info.append("p")
-                        .text(formatPercent(d.cpi_change) + " Debt Change in %" + " " + d.president);
+                        .text(formatPercent(d.debt_change) + " Debt Change in %" + " " + d.president);
             }
             else if (state[0][7].selected) {
                 info.append("p")
-                        .text(formatPercent(d.cpi_change) + " Unemployment Change in %" + " " + d.president);
+                        .text(formatPercent(d.unemployment_change) + " Unemployment Change in %" + " " + d.president);
             }
             else if (state[0][8].selected) {
                 info.append("p")
-                        .text(formatPercent(d.cpi_change) + " Unemployment in %" + " " + d.president);
+                        .text(formatPercent(d.unemployment) + " Unemployment in %" + " " + d.president);
             }
 
 
