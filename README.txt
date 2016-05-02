@@ -44,7 +44,7 @@ style.css
 The rest of stylesheets are used by libraries
 
 “Presidents' Records: Claims vs Results” is hosted at http://vielgi.github.io/
-Screencast: 
+Screencast: https://www.youtube.com/watch?v=JKGiEIxy9fc&feature=youtu.be and also in the /video folder
 
 Javascript Libraries used located under /js and /css:
 Jquery
