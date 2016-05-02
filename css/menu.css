@@ -37,7 +37,10 @@ overflow:hidden;
 transition:width .05s linear;
 -webkit-transform:translateZ(0) scale(1,1);
 z-index:1000;
+opacity:0.9;
 }
+
+
 
 .main-menu>ul {
 margin:7px 0;
@@ -47,6 +50,7 @@ margin:7px 0;
 position:relative;
 display:block;
 width:250px;
+color:#999;
 }
 
 .main-menu li>a {
@@ -61,8 +65,11 @@ text-decoration:none;
 -webkit-transform:translateZ(0) scale(1,1);
 -webkit-transition:all .1s linear;
 transition:all .1s linear;
-  
 }
+
+    .main-menu li:hover,.main-menu li>a:hover {
+        color: black;
+    }
 
 .main-menu .nav-icon {
 position:relative;

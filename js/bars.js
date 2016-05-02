@@ -90,40 +90,40 @@ function barChart(dataset) {
 
             if (state[0][0].selected) {
                 info.append("p")
-                        .text(formatPercent(d.income_change) + " Median Income Change in %");
+                        .text(formatPercent(d.income_change) + " Median Income Change in %" + " " + d.president);
 
             }
             else if (state[0][1].selected) {
                 info.append("p")
-                        .text(formatPercent(d.gdp_change) + " GDP Change in %");
+                        .text(formatPercent(d.gdp_change) + " GDP Change in %" + " " + d.president);
             }
             else if (state[0][2].selected) {
                 info.append("p")
-                        .text(formatPercent(d.cpi_change) + " CPI Change in %");
+                        .text(formatPercent(d.cpi_change) + " CPI Change in %" + " " + d.president);
             }
             else if (state[0][3].selected) {
                 info.append("p")
-                        .text(formatPercent(d.cpi_change) + " S&P500 Change in %");
+                        .text(formatPercent(d.cpi_change) + " S&P500 Change in %" + " " + d.president);
             }
             else if (state[0][4].selected) {
                 info.append("p")
-                        .text(formatPercent(d.cpi_change) + " Budget As % of GDP");
+                        .text(formatPercent(d.cpi_change) + " Budget As % of GDP" + " " + d.president);
             }
             else if (state[0][5].selected) {
                 info.append("p")
-                        .text(formatPercent(d.cpi_change) + " Budget As % Change");
+                        .text(formatPercent(d.cpi_change) + " Budget As % Change" + " " + d.president);
             }
             else if (state[0][6].selected) {
                 info.append("p")
-                        .text(formatPercent(d.cpi_change) + " Debt Change in %");
+                        .text(formatPercent(d.cpi_change) + " Debt Change in %" + " " + d.president);
             }
             else if (state[0][7].selected) {
                 info.append("p")
-                        .text(formatPercent(d.cpi_change) + " Unemployment Change in %");
+                        .text(formatPercent(d.cpi_change) + " Unemployment Change in %" + " " + d.president);
             }
             else if (state[0][8].selected) {
                 info.append("p")
-                        .text(formatPercent(d.cpi_change) + " Unemployment in %");
+                        .text(formatPercent(d.cpi_change) + " Unemployment in %" + " " + d.president);
             }
 
 
